@@ -31,4 +31,14 @@ class StepperIndex {
       return false;
     }
   }
+
+  bool goto(int x, int y) {
+    if (x < y) {
+      StepperModel().notifier.currentIndex = x;
+      return true;
+    } else {
+      StepperModel().notifier.currentIndex = y;
+      return true;
+    }
+  }
 }
