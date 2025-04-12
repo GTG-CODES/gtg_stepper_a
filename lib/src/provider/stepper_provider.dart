@@ -104,8 +104,10 @@ class StepperNotifier extends ChangeNotifier {
         : AnimationDirection.anticlockwise;
 
     _currentIndex = index;
-    controller.jumpTo(double.parse(_currentIndex.toString()));
-    _currentIndex = index;
+    controller.animateToPage(_currentIndex,
+        duration: const Duration(milliseconds: durationTime),
+        curve: Curves.easeOut);
+    // controller.jumpTo(double.parse(_currentIndex.toString()));
     notifyListeners();
   }
 
