@@ -21,6 +21,7 @@ class StepperAController {
   }
 
   void goto(int index, {required Function(int currentIndex) onTap}) {
+    onTap(StepperModel().notifier.currentIndex = index);
     StepperIndex().goto(index);
   }
 }

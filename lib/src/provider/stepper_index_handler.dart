@@ -36,6 +36,7 @@ class StepperIndex {
   }
 
   bool goto(int index) {
+    debugPrint("index $index");
     StepperModel().notifier.jumpToPage(index);
     return true;
   }

@@ -49,16 +49,12 @@ class StepperNotifier extends ChangeNotifier {
 
   bool checkFormKeyValidation(int index) {
     if (_currentIndex > index) return true;
-
     if (!StepperModel().formValidation) return true;
-
     globalKeyList[_currentIndex].currentState?.save();
-
     if (globalKeyList[_currentIndex].currentState != null &&
         globalKeyList[_currentIndex].currentState!.validate()) {
       return true;
     }
-
     return false;
   }
 
@@ -109,6 +105,7 @@ class StepperNotifier extends ChangeNotifier {
 
     _currentIndex = index;
     controller.jumpTo(double.parse(_currentIndex.toString()));
+    _currentIndex = index;
     notifyListeners();
   }
 
