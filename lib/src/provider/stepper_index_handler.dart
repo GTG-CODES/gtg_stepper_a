@@ -33,12 +33,8 @@ class StepperIndex {
   }
 
   bool goto(int x, int y) {
-    if (x < y) {
-      StepperModel().notifier.currentIndex = x;
-      return true;
-    } else {
-      StepperModel().notifier.currentIndex = y;
-      return true;
-    }
+    StepperModel().notifier.currentIndex = x;
+    StepperModel().notifier.currentIndex = y;
+    return true;
   }
 }
