@@ -132,9 +132,18 @@ class _StepperExampleState extends State<StepperExample> {
                   title: "LogIn",
                   onTap: () {
                     debugPrint("LogIn Click");
+                    controller.goto(0, onTap: (index) {});
                   }),
-              CustomSteps(stepsIcon: Icons.home, title: "Home"),
-              CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
+              CustomSteps(
+                  stepsIcon: Icons.home,
+                  title: "Home",
+                  onTap: () => controller.goto(1, onTap: (index) {})),
+              CustomSteps(
+                  stepsIcon: Icons.account_circle,
+                  title: "Account",
+                  onTap: () {
+                    controller.goto(2, onTap: (index) {});
+                  }),
               //  CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),
             ],
             step: const StepA(

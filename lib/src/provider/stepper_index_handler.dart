@@ -32,9 +32,8 @@ class StepperIndex {
     }
   }
 
-  bool goto(int x, int y) {
-    StepperModel().notifier.currentIndex = x;
-    StepperModel().notifier.currentIndex = y;
+  bool goto(int index) {
+    StepperModel().notifier.currentIndex = index;
     return true;
   }
 }
