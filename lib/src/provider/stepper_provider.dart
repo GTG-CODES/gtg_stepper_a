@@ -1,8 +1,3 @@
-/// /*** Uttam kumar mitra ***/
-/// create date 04/03/2023; 10:41 PM
-///
-///
-
 import 'package:flutter/material.dart';
 import 'package:stepper_a/src/utils/stepper_model.dart';
 
@@ -103,6 +98,18 @@ class StepperNotifier extends ChangeNotifier {
         notifyListeners();
       }
     }
+  }
+
+  void jumpToPage(int index) {
+    if (index < 0 || index >= getTotalSteps) return;
+
+    _direction = index > _currentIndex
+        ? AnimationDirection.clockwise
+        : AnimationDirection.anticlockwise;
+
+    _currentIndex = index;
+    controller.jumpTo(double.parse(_currentIndex.toString()));
+    notifyListeners();
   }
 
   void totalScrollSize({required double lineWidth}) {

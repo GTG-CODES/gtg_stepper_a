@@ -6,6 +6,9 @@
 ///
 ///
 
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
 import 'package:stepper_a/src/utils/stepper_model.dart';
 
 /// this class for stepper index calculation
@@ -33,7 +36,7 @@ class StepperIndex {
   }
 
   bool goto(int index) {
-    StepperModel().notifier.currentIndex = index;
+    StepperModel().notifier.jumpToPage(index);
     return true;
   }
 }
