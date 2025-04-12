@@ -126,8 +126,13 @@ class _StepperExampleState extends State<StepperExample> {
               //         style:
               //             TextStyle(fontSize: 14, color: Colors.white)),
             ),
-            customSteps: const [
-              CustomSteps(stepsIcon: Icons.login, title: "LogIn"),
+            customSteps: [
+              CustomSteps(
+                  stepsIcon: Icons.login,
+                  title: "LogIn",
+                  onTap: () {
+                    debugPrint("LogIn Click");
+                  }),
               CustomSteps(stepsIcon: Icons.home, title: "Home"),
               CustomSteps(stepsIcon: Icons.account_circle, title: "Account"),
               //  CustomSteps(image: Image.asset("assets/pic/pay.png", color: Colors.white), title: "Payment"),

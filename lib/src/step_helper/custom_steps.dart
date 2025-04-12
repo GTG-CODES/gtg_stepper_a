@@ -9,10 +9,12 @@ class CustomSteps {
   final IconData? stepsIcon;
   final Image? image;
   final String? title;
+  final Function()? onTap;
 
   const CustomSteps({
     this.stepsIcon,
     this.image,
     this.title,
+    this.onTap,
   });
 }

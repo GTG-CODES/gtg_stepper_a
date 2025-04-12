@@ -144,13 +144,17 @@ mixin StepStyleA on IStepPage {
       return buildWidget(index, StepperModel().step.loadingWidget!);
     }
     return buildWidget(
-        index,
-        StepperModel().customSteps![index].image ??
+      index,
+      InkWell(
+        onTap: StepperModel().customSteps![index].onTap,
+        child: StepperModel().customSteps![index].image ??
             Icon(
               StepperModel().customSteps![index].stepsIcon!,
               color: Colors.white,
               size: 18.0,
-            ));
+            ),
+      ),
+    );
   }
 
   ///set stepper text and icon
